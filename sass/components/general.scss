@@ -108,16 +108,15 @@ footer {
     padding: 0 f.rem(20px);
 }
 
-.footer-rights {
+.footer-text {
     margin-top: f.rem(20px);
 }
 
-.footer-issue br {
+.footer-text br {
     display: none;
 }
 
-.footer-issue span {
-    font-weight: 700;
+.footer-text strong {
     color: var(--color-dark-main);
 }
 
@@ -177,7 +176,12 @@ footer {
     }
 
     .footer-text {
+        margin-top: 0;
         grid-area: text;
+
+        & br {
+            display: block;
+        }
     }
 
     .socials {
