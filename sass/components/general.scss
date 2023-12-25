@@ -239,7 +239,23 @@ footer {
     .btn--android:hover {
         background-color: var(--color-main-yellow);
     }
-    
+
+    footer {
+        margin-top: f.rem(150px);
+        display: grid;
+        grid-template-areas: "logo rights socials"
+                             "logo issue socials";
+    }
+
+    .logo {
+        grid-area: logo;
+        align-self: center;
+    }
+
+    .socials {
+        align-self: center;
+    }
+
     .socials-icon {
         transition: all 0.3s;
 
