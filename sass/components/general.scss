@@ -173,17 +173,11 @@ footer {
     footer {
         margin-top: f.rem(150px);
         display: grid;
-        grid-template-areas: "logo   .."
-                             "rights .."
-                             "issue  socials"
+        grid-template-areas: "logo text socials";
     }
 
-    .footer-rights {
-        grid-area: rights;
-    }
-
-    .footer-issue {
-        grid-area: issue;
+    .footer-text {
+        grid-area: text;
     }
 
     .socials {
@@ -242,18 +236,16 @@ footer {
 
     footer {
         margin-top: f.rem(150px);
-        display: grid;
-        grid-template-areas: "logo rights socials"
-                             "logo issue socials";
-    }
-
-    .logo {
-        grid-area: logo;
-        align-self: center;
     }
 
     .socials {
-        align-self: end;
+        //Default is stretch, and we do not want that
+        align-self: start;
+
+        & a {
+            //Fix white space at bottom of anchor
+            display: inherit
+        }
     }
 
     .socials-icon {
