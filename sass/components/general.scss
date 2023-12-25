@@ -1,0 +1,250 @@
+@use "../abstracts/functions.scss" as f;
+@use "../abstracts/colors.scss";
+
+/*HEADER*/
+/********/
+header {
+    padding: 0 f.rem(20px);
+}
+
+/*HERO*/
+/********/
+.hero {
+    margin-top: f.rem(50px);
+    padding: 0 f.rem(20px);
+}
+
+h1 {
+    font-size: f.rem(40px);
+    font-weight: 700;
+    line-height: f.rem(50px);
+}
+
+.hero p {
+    margin-top: f.rem(20px);
+}
+
+/*EQUALIZER*/
+/***********/
+.equalizer {
+    margin-top: f.rem(150px);
+    position: relative;
+
+    border-radius: f.rem(10px);
+    padding: f.rem(300px) 0;
+    background-image: url('./assets/bg-pattern-2.svg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-color: var(--color-dark-main);
+}
+
+.mobile {
+    height: f.rem(430px);
+    width: f.rem(210px);
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+}
+
+.premium-eq {
+    position: absolute;
+    padding: f.rem(40px) f.rem(30px);
+    border-radius: f.rem(10px);
+    background-color: var(--color-main-orange);
+    color: var(--color-main-white);
+    bottom: -55%;
+}
+
+h2 {
+    font-size: f.rem(32px);
+    font-weight: 700;
+}
+
+.premium-desc {
+    margin-top: f.rem(20px);
+}
+
+.premium-price {
+    margin-top: f.rem(20px);
+    font-size: f.rem(65px);
+    font-weight: 700;
+}
+
+.premium-price span {
+    font-size: f.rem(20px);
+}
+
+.btn {
+    margin-top: f.rem(10px);
+    text-align: center;
+    display: block;
+    border-radius: f.rem(10px);
+    text-decoration: none;
+    font-weight: 700;
+    
+    padding: f.rem(15px) 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: f.rem(5px);
+}
+
+.btn--apple {
+    color: var(--color-main-white);
+    background-color: var(--color-dark-main);
+}
+
+.btn--android {
+    color: var(--color-dark-main);
+    background-color: var(--color-main-white);
+}
+
+/*FOOTER*/
+/********/
+footer {
+    margin-top: f.rem(400px);
+    padding: 0 f.rem(20px);
+}
+
+.footer-rights {
+    margin-top: f.rem(20px);
+}
+
+.footer-issue br {
+    display: none;
+}
+
+.footer-issue span {
+    font-weight: 700;
+    color: var(--color-dark-main);
+}
+
+.socials {
+    margin-top: f.rem(60px);
+    // margin-bottom: f.rem(50px);
+    display: flex;
+    gap: f.rem(20px);
+}
+
+.socials-icon {
+    width: f.rem(25px);
+    height: f.rem(25px);
+}
+
+@media (width > 37.5em) {
+    .hero {
+        margin-top: f.rem(70px);
+    }
+
+    h1 {
+        font-size: f.rem(64px);
+        font-weight: 700;
+        line-height: f.rem(60px);
+        padding-right: 35%;
+    }
+
+    .hero p {
+        margin-top: f.rem(40px);
+        padding-right: 30%;
+    }
+
+    .equalizer {
+        margin-top: f.rem(200px);
+        max-width: f.rem(780px);
+        margin-inline: auto;
+        background-position: center top -40%;
+    }
+
+    .mobile {
+        height: f.rem(556px);
+        width: f.rem(270px);
+        left: 25%;
+    }
+
+    .premium-eq {
+        max-width: f.rem(350px);
+        bottom: -10%;
+        left: 30%;
+        z-index: 1;
+    }
+
+    footer {
+        margin-top: f.rem(150px);
+        display: grid;
+        grid-template-areas: "logo   .."
+                             "rights .."
+                             "issue  socials"
+    }
+
+    .footer-rights {
+        grid-area: rights;
+    }
+
+    .footer-issue {
+        grid-area: issue;
+    }
+
+    .socials {
+        grid-area: socials;
+        margin-top: 0;
+        justify-self: end;
+    }
+
+    .footer-issue br {
+        display: block;
+    }
+}
+
+@media (width > 90em) {
+    .hero {
+        margin-top: f.rem(100px);
+    }
+
+    h1 {
+        font-size: f.rem(88px);
+        line-height: f.rem(80px);
+    }
+
+    .hero p {
+        margin-top: f.rem(50px);
+        font-size: f.rem(20px);
+        padding-right: 40%;
+    }
+
+    .equalizer {
+        margin-top: f.rem(300px);
+        max-width: f.rem(1110px);
+    }
+
+    .mobile {
+        left: 35%;
+    }
+
+    .premium-eq {
+        bottom: -5%;
+        left: 55%;
+        z-index: 1;
+    }
+
+    .btn {
+        transition: all 0.3s;
+    }
+
+    .btn--apple:hover {
+        background-color: var(--color-main-euca);
+    }
+
+    .btn--android:hover {
+        background-color: var(--color-main-yellow);
+    }
+    
+    .socials-icon {
+        transition: all 0.3s;
+
+        &:hover {
+            fill: #FA7453;
+        }
+    }
+}
